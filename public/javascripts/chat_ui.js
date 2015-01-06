@@ -13,7 +13,11 @@ ChatUI.getMessage = getMessage = function () {
 };
 
 ChatUI.sendMessage = sendMessage = function (chat, msg) {
-  chat.sendMessage(msg);
+  if (msg[0] === "/") {
+    chat.processCommand(msg);
+  } else {
+    chat.sendMessage(msg);
+  }
 };
 
 ChatUI.displayMessage = displayMessage = function (msg) {
@@ -33,9 +37,15 @@ $(function () {
     ChatUI.displayMessage(msg);
   });
 
+  socket.on('nicknameChangeResult', function (data) {
+    console.log("in nickchangeresult");
+    displayMessage(data.message);
+  });
+
   $('form').on("submit", function (event) {
     event.preventDefault();
     var msg = ChatUI.getMessage();
+
     ChatUI.sendMessage(chat, msg);
   });
 });
