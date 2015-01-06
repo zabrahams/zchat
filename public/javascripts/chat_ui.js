@@ -38,8 +38,15 @@ $(function () {
   });
 
   socket.on('nicknameChangeResult', function (data) {
-    console.log("in nickchangeresult");
     displayMessage(data.message);
+  });
+
+  socket.on('roomList', function (data) {
+    var $ul = $('ul.tenants');
+    $ul.empty();
+    for (var i = 0; i < data.tenants.length; i++) {
+      $ul.append($("<li></li>").text(data.tenants[i]));
+    }
   });
 
   $('form').on("submit", function (event) {
