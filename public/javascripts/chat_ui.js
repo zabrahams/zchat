@@ -22,16 +22,23 @@ ChatUI.sendMessage = sendMessage = function (chat, msg) {
 
 ChatUI.displayMessage = displayMessage = function (msg) {
   var $msgList, $li;
-
   $msgList = $("ul.message-list");
+
+  if ($msgList.find('li').length > 15) {
+    $msgList.find('li').first().remove();
+  }
+
   $li = $("<li>");
   $li.text(msg);
-  $msgList.prepend($li);
+  $msgList.append($li);
+
+
 };
 
 $(function () {
   var socket = io();
   var chat = new ChatApp.Chat({socket: socket});
+  $('form input[type=text]').focus();
 
   socket.on('messaged', function (msg) {
     ChatUI.displayMessage(msg);
@@ -55,6 +62,7 @@ $(function () {
 
     ChatUI.sendMessage(chat, msg);
   });
+
 });
 
 })();

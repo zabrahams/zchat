@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700|Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href="./stylesheets/styles.css" rel="stylesheet" type="text/css">
     <script src="./javascripts/jquery.js"></script>
     <script src="./javascripts/socket.io.js"></script>
     <script src="./javascripts/chat.js"></script>
     <script src="./javascripts/chat_ui.js"></script>
 
     </script>
-    <title>Hippest Chat</title>
+    <title>zchat</title>
   </head>
   <body>
-    <h1>Hippest Chat!</h1>
-    <section id=content>
+    <header>
+      <h1>zchat</h1>
+    </header>
+
+    <section id="content" class="group">
 
       <section class="message-container">
         <ul class="message-list"></ul>
-      </section>
-
-      <section class="new-message-container">
-        <form class"message-form">
-          <label for="new_message">New Message:</label>
-          <input type="text" id="new_message" value="">
-          <input type="submit" value="Post Message">
-        </form>
       </section>
 
       <section class="room-info">
@@ -31,8 +27,15 @@
         <ul class="tenants"></ul>
       </section>
 
+
     </section>
 
+    <section class="new-message-container">
+      <form class"message-form">
+        <input type="text" id="new_message" value="">
+        <input type="submit" class="hidden" value="Post Message">
+      </form>
+    </section>
 
   </body>
 </html>

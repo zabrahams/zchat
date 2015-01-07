@@ -1,0 +1,116 @@
+/* palette:
+#e75d41 coral
+#ecc896 taupe
+#afc3c1 - green grey
+#1a5783 - blue
+#0a1c28 - darkblue
+*/
+
+body, h1, section, ul, li, form, label, h3, header {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  list-style: none;
+}
+
+input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;;
+  background: transparent;
+  border: 0;
+}
+
+.group::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  background: #afc3c1;
+  color: #0a1c28;
+}
+
+header {
+  display: block;
+  text-align: center;
+  font-size: 36px;
+  font-weight: light;
+  margin: 10px 0;
+}
+
+section#content {
+  width: 900px;
+  margin: auto;
+  position: relative;
+}
+section.message-container {
+  background: #e75d41;
+  width: 600px;
+  min-height: 300px;
+  display: block;
+  float: left;
+
+}
+
+
+
+.message-container .message-list {
+  margin: 20px;
+}
+
+.message-list > li {
+  padding: 5px;
+}
+
+section.room-info {
+  background: #ecc896;
+  width: 300px;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 600px;
+}
+
+.room-info .room-name {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+input[type=text] {
+  display: block;
+  padding: 10px;
+  width: 580px;
+  color: #ecc896;
+
+
+
+}
+
+.room-info .tenants {
+  margin: 10px 20px;
+
+}
+section.new-message-container {
+  background: #1a5783;
+  display: block;
+  width: 600px;
+  margin: auto;
+}

@@ -23,7 +23,10 @@
     arg = matchData[2];
 
     if (command === "nick") {
-      this.socket.emit("nicknameChangeRequest", arg);
+      this.socket.emit("nicknameChangeRequest", {
+        nick: arg,
+        room: this.room
+      });
     } else if (command === "join"){
       this.socket.emit("roomChangeRequest", { room: arg });
       this.room = arg;
